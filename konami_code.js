@@ -11,7 +11,7 @@ const codes = [
   "a"
 ];
 
-function init() {
+/*function init() {
   // your code here
     var idx = 0;
     //keys_arr = []
@@ -44,5 +44,25 @@ function init() {
     if (chkTr(codes, chker)) {
       alert('Congrats! You cracked the Konami Code!!')
     }
-})*/
-})}
+})
+})}*/
+
+//this isnt my code, the help people gave me this
+//since my code woulder trigger an event but not
+//pass the test
+function init() {
+  let idx = 0
+
+  document.body.addEventListener("keydown", (e) => {
+    const key = e.key
+
+    idx = (codes[idx] === key) ? ++idx : 0
+
+
+    if (idx === codes.length) {
+      window.alert("Hurray!");
+      idx = 0
+    }
+
+  });
+}
